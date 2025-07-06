@@ -194,10 +194,11 @@ public class ControllerWeather implements Initializable{
 		changeBackgroundIcon("01d");
 		input.setText(null);
 		toggleVisible(false);
-		feelsLikeLabel.setText("K-Weather v1.0");
+		feelsLikeLabel.setText("K-Weather v1");
 		
 		statusLabel.setText("Powered by JavaFX.");
-		
+		humLabel.setText("Humidity icon by icons8.com");
+		humLabel.setVisible(true);
 		statusLabel.setVisible(true);
 		feelsLikeLabel.setVisible(true);
 		changeFavIcon(false);

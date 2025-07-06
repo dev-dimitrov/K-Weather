@@ -104,7 +104,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <Label fx:id="humLabel" alignment="CENTER" layoutX="145.0" layoutY="447.0" prefHeight="34.0" prefWidth="94.0" text="xx%">
+      <Label fx:id="humLabel" alignment="CENTER" layoutX="8.0" layoutY="447.0" prefHeight="34.0" prefWidth="371.0" text="xx%">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="33.61" offsetY="2.0" radius="17.990000000000002" spread="0.45" width="40.35" />
          </effect>
@@ -113,7 +113,7 @@
          </font>
       </Label>
       <Button fx:id="hiddenButton" layoutX="130.0" layoutY="284.0" mnemonicParsing="false" onAction="#toggleUnits" opacity="0.00" prefHeight="92.0" prefWidth="122.0" text="Button" />
-      <Label fx:id="userGuideLabel" alignment="CENTER" layoutX="44.0" layoutY="134.0" prefHeight="212.0" prefWidth="300.0" text="This program takes all the information from OpenWeather.org. You can change the temperature unit by clicking on its indicator. (Celsius or Fahrenheit), You can also bookmark locations and select them at the 'Favorites' option " textAlignment="JUSTIFY" visible="false" wrapText="true">
+      <Label fx:id="userGuideLabel" alignment="CENTER" layoutX="44.0" layoutY="134.0" prefHeight="212.0" prefWidth="300.0" text="This program takes all the information from OpenWeather. You can change the temperature unit by clicking on its indicator. (Celsius or Fahrenheit), You can also bookmark locations and select them at the 'Favorites' option." textAlignment="JUSTIFY" visible="false" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>

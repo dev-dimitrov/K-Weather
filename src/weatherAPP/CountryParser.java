@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /*The only purpose of this class is to translate a country name to a country code
- * Im making my own class bc im lazy to learn now a made library*/
+ * I'm making my own class bc im lazy to learn now a made library*/
 public class CountryParser {
 	Map<String, String> countries;
 	

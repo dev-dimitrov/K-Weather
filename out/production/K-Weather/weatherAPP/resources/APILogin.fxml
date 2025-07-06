@@ -18,7 +18,7 @@
             <Image url="@images/01d-gradient.png" />
          </image>
       </ImageView>
-      <Label fx:id="l1" layoutX="70.0" layoutY="230.0" prefHeight="18.0" prefWidth="215.0" text="Paste here your openWeather API key:">
+      <Label fx:id="l1" layoutX="70.0" layoutY="230.0" prefHeight="18.0" prefWidth="215.0" text="Paste here your OpenWeather API key:">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="33.61" offsetY="2.0" radius="17.990000000000002" spread="0.45" width="40.35" />
          </effect>
