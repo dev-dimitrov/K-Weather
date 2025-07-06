@@ -85,10 +85,14 @@ public class ControllerWeather implements Initializable{
 	@FXML
 	private Label userGuideLabel;
 	
-	
 	@Override
  	public void initialize(URL arg0, ResourceBundle arg1) {
-		apiKey = ControllerLogin.loadApiKeyTxt();
+		// Tests if it is in temp file
+		apiKey = ControllerLogin.loadApiKeyTxt(true);
+		// if still null, then load it from the apikey.txt file
+		if(apiKey == null){
+			apiKey = ControllerLogin.loadApiKeyTxt(false);
+		}
 		setupHomeScene();
 		isInCelsius = true;
 	}
@@ -322,9 +326,7 @@ public class ControllerWeather implements Initializable{
 	public void toggleLogoImage(boolean a) {
 		logoImage.setVisible(a);
 	}
-	
-	
-	
+
 	public void setupHomeScene() {
 		c = new CountryParser();
 		
@@ -335,7 +337,7 @@ public class ControllerWeather implements Initializable{
 		loadFavLocations();
 	}
 	
-	public void setApiKey(String a) {
+	public static void setApiKey(String a) {
 		apiKey = a;
 	}
 	

@@ -36,7 +36,7 @@ public class ControllerLogin{
 	
 	private Parent root;
 	
-	public void loadApiKey(ActionEvent e) throws IOException{
+	public void getApiKey(ActionEvent e) throws IOException{
 		invalidLabel.setVisible(false);
 		String input = inputLogin.getText();
 		
@@ -49,8 +49,11 @@ public class ControllerLogin{
 		} 
 		else {
 			if(rememberCheckBox.isSelected()) {
-				saveApiKey(input);
-			}			
+				saveApiKey(input, false);
+			}
+			else{
+				saveApiKey(input, true);
+			}
 			changeScene(e, input);
 		}
 	}
@@ -60,15 +63,17 @@ public class ControllerLogin{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/weatherAPP/resources/home.fxml"));
 		root = loader.load();
 		/* linking the new scene to a controller (in this Case ControllerWeather)
-		 * if you dont link it, the controller tries to interact with elements that are not injected yet and 
+		 * if you don't link it, the controller tries to interact with elements that are not injected yet and
 		 * throws a NullPointerException*/
 		ControllerWeather c = loader.getController();
 		/* To move information between controllers 
 		 * (even if It's the same class), you need to make it via public methods or variables.
 		 * */
 		
-		// Saving the valid APIKey in the other controller
-		c.setApiKey(apiKey);
+		 /*	Saving the valid APIKey in the other controller (ControllerWeather)
+			ControllerWeather.setApiKey(apiKey); This crap doesn't work to send data through the other Controller
+		 	An improvised solution: make a temporary file to save there the api and then remove it.
+		 */
 		
 		
 		
@@ -78,25 +83,39 @@ public class ControllerLogin{
 		scene.getStylesheets().add(getClass().getResource("/weatherAPP/resources/application.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();
+
 	}
 	
-	public static void saveApiKey(String api) {
-		try(BufferedWriter b = new BufferedWriter(new FileWriter("apikey.txt"))){
+	public static void saveApiKey(String api, boolean temp) {
+		String fileName = temp ? "temp.txt" : "apikey.txt";
+		try(BufferedWriter b = new BufferedWriter(new FileWriter(fileName))){
 			b.write(api);
-			b.write("\n--------------------------------\nYou can modify the apikey in this file, the program will check if its valid");
+			if(!temp){
+				b.write("\n--------------------------------\nYou can modify the apikey in this file, the program will check if its valid");
+			}
 		}
 		catch(IOException ex) {
 			System.out.println(ex);
 		}
 	}
-	public static String loadApiKeyTxt() {
+	public static String loadApiKeyTxt(boolean temp) {
 		String api = "";
-		try(BufferedReader b = new BufferedReader(new FileReader("apikey.txt"))){
+		String fileName = temp ? "temp.txt" : "apikey.txt";
+		try(BufferedReader b = new BufferedReader(new FileReader(fileName))){
 			api = b.readLine();
 		}
 		catch(IOException ex) {
 			System.out.println(ex);
 			api = null;
+		}
+
+		if(temp){
+			try(BufferedWriter b = new BufferedWriter(new FileWriter(fileName))){
+				b.write("");
+			}
+			catch (IOException ex){
+				System.out.println(ex);
+			}
 		}
 		
 		return api;

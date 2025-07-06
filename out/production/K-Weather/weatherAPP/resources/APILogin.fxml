@@ -23,7 +23,7 @@
             <DropShadow blurType="GAUSSIAN" height="33.61" offsetY="2.0" radius="17.990000000000002" spread="0.45" width="40.35" />
          </effect>
       </Label>
-      <TextField fx:id="inputLogin" alignment="CENTER" focusTraversable="false" layoutX="70.0" layoutY="249.0" onAction="#loadApiKey" prefHeight="26.0" prefWidth="215.0" promptText="API key" />
+      <TextField fx:id="inputLogin" alignment="CENTER" focusTraversable="false" layoutX="70.0" layoutY="249.0" onAction="#getApiKey" prefHeight="26.0" prefWidth="215.0" promptText="API key" />
       <Label fx:id="l2" layoutX="262.0" layoutY="482.0" text="K-Weather">
          <font>
             <Font size="23.0" />
@@ -46,6 +46,6 @@
          <effect>
             <DropShadow height="39.51" offsetY="2.0" radius="19.465" width="40.35" />
          </effect></CheckBox>
-      <Button layoutX="289.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#loadApiKey" prefHeight="18.0" prefWidth="26.0" text="&gt;" />
+      <Button layoutX="289.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#getApiKey" prefHeight="18.0" prefWidth="26.0" text="&gt;" />
    </children>
 </AnchorPane>

@@ -35,7 +35,7 @@ public class LauncherWeather extends Application{
 	
 	public static boolean checkAPIkey() {
 		boolean result = false;
-		String api = ControllerLogin.loadApiKeyTxt();
+		String api = ControllerLogin.loadApiKeyTxt(false);
 		if(api != null) {
 			// Make a test if this API key is valid, if not, return false.
 			APIresponse test = new APIresponse("https://api.openweathermap.org/data/2.5/weather?&appid="+api+"&units=metric&q=");
