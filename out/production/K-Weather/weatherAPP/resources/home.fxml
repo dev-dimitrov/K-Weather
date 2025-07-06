@@ -113,7 +113,7 @@
          </font>
       </Label>
       <Button fx:id="hiddenButton" layoutX="130.0" layoutY="284.0" mnemonicParsing="false" onAction="#toggleUnits" opacity="0.00" prefHeight="92.0" prefWidth="122.0" text="Button" />
-      <Label fx:id="userGuideLabel" alignment="CENTER" layoutX="44.0" layoutY="134.0" prefHeight="212.0" prefWidth="300.0" text="Thank you for using K-Weather! This program takes all the information from OpenWeather.org. You can change the temperature unit by clicking on its indicator. (Celsius or Fahrenheit), You can also bookmark locations and select them at the 'Favorites' option " textAlignment="JUSTIFY" visible="false" wrapText="true">
+      <Label fx:id="userGuideLabel" alignment="CENTER" layoutX="44.0" layoutY="134.0" prefHeight="212.0" prefWidth="300.0" text="This program takes all the information from OpenWeather.org. You can change the temperature unit by clicking on its indicator. (Celsius or Fahrenheit), You can also bookmark locations and select them at the 'Favorites' option " textAlignment="JUSTIFY" visible="false" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
