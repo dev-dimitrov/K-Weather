@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="weatherAPP.ControllerLogin">
+   <children>
+      <ImageView fx:id="backgroundImage" fitHeight="525.0" fitWidth="460.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/01d-gradient.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="l1" layoutX="70.0" layoutY="230.0" prefHeight="18.0" prefWidth="215.0" text="Paste here your openWeather API key:">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="33.61" offsetY="2.0" radius="17.990000000000002" spread="0.45" width="40.35" />
+         </effect>
+      </Label>
+      <TextField fx:id="inputLogin" alignment="CENTER" focusTraversable="false" layoutX="70.0" layoutY="249.0" onAction="#loadApiKey" prefHeight="26.0" prefWidth="215.0" promptText="API key" />
+      <Label fx:id="l2" layoutX="262.0" layoutY="482.0" text="K-Weather">
+         <font>
+            <Font size="23.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="28.86" offsetY="2.0" radius="16.802500000000002" spread="0.45" width="40.35" />
+         </effect>
+      </Label>
+      <Hyperlink fx:id="hyperLink" layoutX="69.0" layoutY="367.0" onAction="#openLink" text="Click here to get you own API key for free" textFill="#0068d4" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Hyperlink>
+      <Label fx:id="invalidLabel" layoutX="148.0" layoutY="311.0" text="Invalid API key!" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="rememberCheckBox" layoutX="130.0" layoutY="287.0" mnemonicParsing="false" text="Remember the API key">
+         <effect>
+            <DropShadow height="39.51" offsetY="2.0" radius="19.465" width="40.35" />
+         </effect></CheckBox>
+      <Button layoutX="289.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#loadApiKey" prefHeight="18.0" prefWidth="26.0" text="&gt;" />
+   </children>
+</AnchorPane>

@@ -39,10 +39,7 @@ public class ControllerWeather implements Initializable{
 	
 	@FXML
 	private Label statusLabel;
-	
-	@FXML
-	private AnchorPane window;
-	
+
 	@FXML
 	private TextField input;
 	
@@ -52,22 +49,10 @@ public class ControllerWeather implements Initializable{
 	private Label locationLabel;
 	
 	private APIresponse api;
-	
-	@FXML
-	private MenuBar menuBar;
-	
-	@FXML
-	private MenuItem credits;
-	
+
 	@FXML
 	private Menu fav;
-	
-	@FXML 
-	private Label l1;
-	
-	@FXML
-	private Label l2;
-	
+
 	@FXML
 	private ImageView favIcon;
 	
@@ -88,20 +73,8 @@ public class ControllerWeather implements Initializable{
 	public static String apiKey;
 
 	@FXML
-	private Hyperlink hyperLink;
-	
-	@FXML
-	private TextField inputLogin;
-	
-	@FXML
-	private Label invalidLabel;
-	
-	@FXML
 	private MenuItem changeItem;
-	
-	@FXML
-	private Label versionLabel;
-	
+
 	public boolean isInCelsius;
 	
 	public JsonStruct j;
@@ -128,41 +101,36 @@ public class ControllerWeather implements Initializable{
 		String location = input.getText().toLowerCase();
 		// Split the text into 2 parts, the city and the country name.
 		
-		String splitted[] = location.trim().split(",");
+		String split[] = location.trim().split(",");
 		
-		if(splitted.length == 2) { // if the split length is 2 (the location and the country name or code)
+		if(split.length == 2) { // if the split length is 2 (the location and the country name or code)
 			
 			// if its already a country code keeps running with no problem at all.
-			splitted[1] = c.getCountryCode(splitted[1]);
+			split[1] = c.getCountryCode(split[1]);
 			
-			if(splitted[1] != null) {
-				j = api.makeCall(splitted[0]+","+splitted[1]);
+			if(split[1] != null) {
+				j = api.makeCall(split[0]+","+split[1]);
 			}
 			
 		}
 		else { // Only the name, without country name/code;
-			j = api.makeCall(splitted[0]);
+			j = api.makeCall(split[0]);
 			
-			// add to the splitted the country code to prevent exceptions using the prettierPhrase method.
+			// add to the split the country code to prevent exceptions using the prettierPhrase method.
 			// Only if the request was successful
 			if(j != null) {
-				splitted = Arrays.copyOf(splitted, 2);
-				splitted[1] = j.sys.country;
+				split = Arrays.copyOf(split, 2);
+				split[1] = j.sys.country;
 			}
 		}
 		
 		if(j != null) {
 			String r[] = putUnits(j.main.temp, j.main.feelsLike);
-			changeWeatherInfo(prettierPhrase(splitted).trim(), r[0], r[1] ,j.weather.get(0).status, j.weather.get(0).icon, j.main.humidity);
+			changeWeatherInfo(prettierPhrase(split).trim(), r[0], r[1] ,j.weather.get(0).status, j.weather.get(0).icon, j.main.humidity);
 			
 			
 			// Check the favorite status of this location 
-			if(isInFav(locationLabel.getText())) {
-				changeFavIcon(true);
-			}
-			else {
-				changeFavIcon(false);
-			}
+            changeFavIcon(isInFav(locationLabel.getText()));
 			toggleVisible(true);
 		}
 		else {
@@ -210,7 +178,6 @@ public class ControllerWeather implements Initializable{
 	
 	private String prettierPhrase(String phrase[]) {
 		String p = "";
-		
 		p += phrase[0]+", "+phrase[1].toUpperCase();
 		p = p.substring(0,1).toUpperCase() + p.substring(1);
 		
@@ -292,15 +259,6 @@ public class ControllerWeather implements Initializable{
 	
 	// check if a location is already in favorite
 	public boolean isInFav(String l) {
-//		
-//		Iterator<MenuItem> iterator = fav.getItems().iterator();
-//		while(iterator.hasNext()) {
-//			MenuItem i = iterator.next();
-//			if (i.getText().equals(l)) {
-//				return true;
-//			}
-//		}
-//		return false;
 		return favLocations.contains(l);
 	}
 	
