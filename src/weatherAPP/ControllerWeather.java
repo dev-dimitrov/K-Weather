@@ -378,13 +378,16 @@ public class ControllerWeather implements Initializable{
 	        if (System.getProperty("os.name").contains("Windows")) {
 	        	 new ProcessBuilder("cmd","/c","start "+link).inheritIO().start().waitFor();
 	        }
+			else{
+				new ProcessBuilder("xdg-open",link).start();
+			}
 	        
 	    } catch (IOException | InterruptedException ex) {
 	    	System.out.println(ex);
 	    }
 	}
 	
-	/*At index 0 saves the temp and at index 2 saves the feelslike temp*/
+	/*At index 0 saves the temp and at index 1 saves the feelslike temp*/
 	public String[] putUnits(String unit1, String unit2){
 		String result[] = new String[2];
 		int u1 = Integer.valueOf(unit1);
