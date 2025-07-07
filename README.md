@@ -24,7 +24,7 @@ This method is only valid for Windows machines.
 2. Extract the zip folder and look for the executable file.
 3. Once you found it, just open it and that's it!
 
-If are unable to execute this version, try to install [Java](https://www.java.com/en/download/manual.jsp).
+If you are unable to execute this version, try to install [Java](https://www.java.com/en/download/manual.jsp).
 
 ## 🐌How to run K-Weather via JAR file [Slow way]🐌
 - Pre-requirements
