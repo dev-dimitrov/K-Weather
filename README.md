@@ -19,13 +19,20 @@ You can search only by city name or by city and country (You must type a comma b
 
 ## ⚡How to run K-Weather via EXE file [Fast way]⚡
 This method is only valid for Windows machines.
-The ONLY requirement for this version is to have installed [Java](https://www.java.com/en/download/manual.jsp).
+
 1. Download from [Release](https://github.com/su-Kaizen/K-Weather/releases/) an EXE version.
 2. Extract the zip folder and look for the executable file.
 3. Once you found it, just open it and that's it!
 
+If are unable to execute this version, try to install [Java](https://www.java.com/en/download/manual.jsp).
+
 ## 🐌How to run K-Weather via JAR file [Slow way]🐌
-Coming very soon!!
-(The program is not fully adapted yet to run in linux or macOS, and now I'm lazy to do it...)
+- Pre-requirements
+    - JRE 11 or above installed. [Java download site](https://www.java.com/en/download/manual.jsp)
+    - The JavaFX Library. [JavaFX download site](https://gluonhq.com/products/javafx/)
+
+1. Download from [Release](https://github.com/su-Kaizen/K-Weather/releases/) a JAR version.
+2. Open a terminal at the directory with the jar file in it.
+3. Enter this command ``` java --module-path <JAVA_FX_LIB_DIRECTORY> --add-modules=javafx.controls,javafx.fxml -jar K-Weather-vX.jar ```
 ## 👤Contact me👤
 You can ask me anything via Discord!: daviido.exe
