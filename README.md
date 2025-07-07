@@ -15,6 +15,7 @@ K-Weather is a very simple GUI application to check the weather worldwide, this 
 
 You can search only by city name or by city and country (You must type a comma between the city and the country). It's also possible to type a country code ([ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-2#Current_codes)).
 
+![demo](https://github.com/user-attachments/assets/5f8b931f-585f-4803-9497-1f31cc3a7e20)
 
 ## ⚡How to run K-Weather via EXE file [Fast way]⚡
 This method is only valid for Windows machines.
