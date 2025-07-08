@@ -17,6 +17,9 @@ You can search only by city name or by city and country (You must type a comma b
 
 ![demo](https://github.com/user-attachments/assets/5f8b931f-585f-4803-9497-1f31cc3a7e20)
 
+### Important ❗
+As I mentioned before in this README file, the info is provided by [OpenWeather](https://openweathermap.org/), so it's mandatory to have an API key, you can get one for free simply by signing up and generating a key (maximum 60 calls per minute).
+
 ## ⚡How to run K-Weather via EXE file [Fast way]⚡
 This method is only valid for Windows machines.
 
