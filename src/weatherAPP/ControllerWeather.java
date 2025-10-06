@@ -367,7 +367,7 @@ public class ControllerWeather implements Initializable{
 	
 	public void openGithub(MouseEvent e) {
 		if(logoImage.isVisible()) { // check if its in About screen
-			linkOpener("https://github.com/su-kaizen");
+			linkOpener("https://github.com/dev-dimitrov/");
 		}
 	}
 	
